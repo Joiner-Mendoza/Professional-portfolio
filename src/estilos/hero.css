@@ -1,0 +1,215 @@
+  :root {
+    --Azul:#081b29;
+    --azul2:#112e42;
+    --Azul-claro: #00abf0;
+    --Black:#000000;
+    --White:#ffffff;
+    --black-modal: rgb(9%,0%,0%,0.5) ;
+    --gray:#8080802b;
+    --gray2:#0a0a0a4d;
+    --Gray3:#9185854d;
+    --gray4:#918a8a;
+    --gray5:#3b3f50;
+    --foter:#081B49;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  html{
+    background-color: var(--Azul);
+  }
+  a{
+    padding: 8px 15px;
+    font-weight: bold;
+  }
+  /* estilos del nav */
+  .isActive {
+    display: none;
+  }
+
+
+/* Agrega los siguientes estilos para posicionar la imagen en el lado derecho */
+.logo {
+  position: absolute;
+  right: 15%; 
+  top: 50%; 
+  transform: translateY(-50%); /* Ajusta la alineación vertical */
+}
+.logo img{
+    height: 600px;
+    opacity: .3;
+    transition: 2s;
+    position: relative;
+
+}
+.logo img:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+  .nav_Container{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-bottom: 1px solid var(--White);
+
+  }
+  .ul_Nav_Container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 300px;
+  }
+  .ul_Nav_Container a {
+  margin: 0 40px;
+  }
+
+  /* estilos del Hero */
+  .Hero-content{
+  padding: 15px;
+  max-width: 600px;
+  margin-top: -64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  margin-left: 140px;
+
+  }
+  .Hero-content h1{
+    position: relative;
+    font-size: 53px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: var(--White);
+    
+  }
+  .Hero-content h2{
+    position: relative;
+    margin: 30px 0;
+    font-size: 35px;
+    color: transparent;
+    -webkit-text-stroke: 0.7px var(--Azul-claro);  /* esto es para la distincion del texto "Frontend Developer" */
+    
+  }
+  .Hero-content p{
+    color: var(--White);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4rem ;
+    margin-bottom: 30px;
+    /* width: 400px; */
+  }
+  /* estilos de los botones del Hero */
+  .Hero-content .btn-box{
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+
+  }
+ 
+
+  .Hero-content .HireMe{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    width: 150px;
+    height: auto;
+    background: var(--Azul-claro);
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: var(--Black);
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    padding: 13px;
+    margin: 30px 0;
+
+  }
+  
+  .Hero-content .HireMe{
+    background-color: transparent;
+    color: var(--Azul-claro);
+  }
+  
+  .Hero-content .HireMe:hover{
+    color: #00abf0;
+  
+  }
+  .Hero-content .HireMe{
+    background-color: var(--Azul-claro);
+    color: var(--Black);
+  }
+  .Hero-content .HireMe:hover{
+    color: var(--Azul-claro);
+    cursor: pointer;
+  }
+  .Hero-content .HireMe::before{
+    background-color: #00abf0;
+  }
+  .Hero-content .HireMe::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0 ;
+    width: 0;
+    height: 100%;
+    background: radial-gradient(rgba(10,27,41,1),rgba(10,27,41,1));
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+  }
+  .Hero-content .HireMe:hover:before{
+    width: 100%;
+    transition: .5s;
+  
+  }
+  .Hero-content .HireMe:nth-child(2):hover{
+    color: var(--Azul-claro);
+  }
+  .Hero-sci {
+    width: 50%;
+    padding: 15px;
+  }
+  .Hero-sci .iconHero{
+    width: 50px;
+    color: var(--Azul-claro);
+    transition: 1s;
+  }
+  .Hero-sci .iconHero:hover{
+    cursor: pointer;
+    color: var(--White);
+
+  }
+
+
+  /* MOBILE */
+
+  @media (max-width:1080px){
+    .Hero-content{
+      width: 100%;
+      margin-left: 1px ;
+      margin: 0 auto;
+      height: 100vh;
+    }
+    .Hero-content h1{
+      font-size: 36px;
+    }
+    .Hero-sci{
+      width: 100%;
+      padding:  0;
+    }
+  }

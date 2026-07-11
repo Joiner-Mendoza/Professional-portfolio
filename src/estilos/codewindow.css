@@ -1,0 +1,109 @@
+.editor{
+
+    width:520px;
+    height: 450px;        
+    background:#1e1e1e;
+    border-radius:15px;
+    overflow:auto;
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+    
+
+}
+.editor-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px;
+
+    background:#2d2d2d;
+
+}
+.red{
+
+    
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#ff5f56;
+
+}   
+.yellow{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#ffbd2e;
+
+}
+.green{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#27c93f;
+
+}
+.editor-header p{
+
+    color:white;
+
+    margin-left:15px;
+
+    font-size:15px;
+
+}
+.editor pre{
+    color:#d4d4d4;
+    padding:25px;
+    height: 500px;
+    font-size:15px;
+    line-height:28px;
+    white-space:pre-wrap;
+    font-family:Consolas, monospace;
+    overflow: auto;
+
+}
+.editor-content{
+
+    position:relative;
+
+}
+.cursor{
+
+    animation:blink .8s infinite;
+
+}
+@keyframes blink{
+
+0%{
+
+opacity:1;
+
+}
+
+50%{
+
+opacity:0;
+
+}
+
+100%{
+
+opacity:1;
+
+}
+
+}   

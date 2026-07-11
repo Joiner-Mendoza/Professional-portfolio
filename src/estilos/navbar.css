@@ -1,0 +1,191 @@
+:root {
+    --Azul: #081b29;
+    --azul2: #112e42;
+    --Azul-claro: #00abf0;
+    --Black: #000000;
+    --White: #ffffff;
+    --black-modal: rgba(9%, 0%, 0%, 0.5);
+    --gray: #8080802b;
+    --gray2: #0a0a0a4d;
+    --Gray3: #9185854d;
+    --gray4: #918a8a;
+    --gray5: #3b3f50;
+    --foter: #081B49;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.active {
+    display: block;
+}
+
+.inactive {
+    display: none;
+}
+
+html {
+    background: var(--Azul);
+    width: 100%;
+    height: 100vh;
+}
+
+.Nav_Container {
+    position: fixed;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    background-color: var(--Azul);
+    color: var(--White);
+    border-bottom: 2px solid var(--White);
+}
+
+.Nac_Container-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-right: 14%;
+}
+
+.Nac_Container-ul a {
+    margin: 0 60px;
+    color: var(--White);
+    font-size: 20px;
+}
+
+.Nac_Container-ul a:nth-child(1) {
+    color: var(--Azul-claro);
+}
+
+.Logo {
+    position: absolute;
+    margin-left: 30px;
+
+}
+.Logo h1:hover{
+    cursor: pointer;
+    color: var(--Azul-claro);
+}
+
+.Nav_Container_Menu-Androip {
+    display: none;
+}
+
+@media (max-width: 1080px) {
+    .Nav_Container {
+        padding: 0;
+    }
+    .Nac_Container-ul a{
+        padding: 0;
+        margin: 0 50px;
+    }
+    /* esto que esta comentado era el menu en androip pero me salia un eror al momento de darle al boton de menu  */
+    /* .Nac_Container-ul {
+        display: none;
+    }
+    
+    .Nav_Container_Menu-Androip {
+        position: relative;
+        width: 100%;
+        display: block;
+        height: 100vh;
+        padding: 60px 0 15px 0;
+        justify-content: center;
+        text-align: center;
+        z-index: 3;
+        background: var(--azul2);
+        text-align: center;
+        display: none;
+        
+    }
+    
+    .Nav_Container_Menu-Androip-ul {
+        width: 100%;
+    }
+    
+    
+    .Nav_Container-Androip-ul-li {
+        margin: 20px 0;
+        padding: 15px;
+    }
+    
+    .Nav_Container-Androip-ul-li:hover {
+        background: var(--gray);
+    }
+     */
+    /* .Icon-menu {
+        position: absolute;
+        width: 46px;
+        right: 0;
+        padding-right: 20px;
+        top: 22%;
+        display: block;
+    }
+    
+    .Icon-menu:hover {
+        cursor: pointer;
+    }
+    
+    .Icon-Close {
+        width: 30px;
+        left: 0;
+        top: 23px;
+        margin-left: 5%;
+        position: absolute;
+        display: block;
+        z-index: 10;
+    }
+    
+    .Icon-Close:hover {
+        cursor: pointer;
+        color: var(--Azul-claro);
+    } */
+    .logo img {
+        display: none;
+    }
+    .Logo {
+        padding: 15px;
+    }
+   
+}
+@media (max-width:830px) {
+    .Nac_Container-ul a{
+    
+        margin: 0 30px;
+        font-size: 16px;
+    }
+    .Logo h1 {
+        font-size: 16px;
+    }
+ 
+}
+@media (max-width:570px) {
+    .Nac_Container-ul a{
+    
+        margin: 0 15px;
+
+    }
+    .Nac_Container-ul{
+        margin-right: 2%;
+    }
+}
+@media (max-width:570px) {
+    .Nac_Container-ul a{
+        margin: 8px;
+    }
+    .Logo  {
+        margin-left: 0;
+    }
+}

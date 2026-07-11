@@ -1,0 +1,113 @@
+:root {
+    --Azul:#081b29;
+    --azul2:#112e42;
+    --Azul-claro: #00abf0;
+    --Black:#000000;
+    --White:#ffffff;
+    --black-modal: rgb(9%,0%,0%,0.5) ;
+    --gray:#8080802b;
+    --gray2:#0a0a0a4d;
+    --Gray3:#9185854d;
+    --gray4:#918a8a;
+    --gray5:#3b3f50;
+    --foter:#081B49;
+  }
+/* ==========================
+   Sección Skills
+========================== */
+
+.skills{
+    min-height: 100vh;
+    padding: 6rem 8%;
+    background:var(--azul2);
+}
+
+.title-skills{
+    text-align:center;
+    font-size:3rem;
+    color:#fff;
+}
+
+.title-skills span{
+    color:#6c63ff;
+}
+
+.skills p{
+    text-align:center;
+    color:#b4b4b4;
+    margin:25px auto 60px;
+    max-width:700px;
+}
+
+/* ==========================
+   Contenedor principal
+========================== */
+
+.stack-visual{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:45px;
+    flex-wrap:wrap;
+}
+
+/* ==========================
+   Cada columna
+========================== */
+
+.stack-layer{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.stack-title{
+    color:#6c63ff;
+    font-size:1.5rem;
+    font-weight:700;
+    margin-bottom:10px;
+    text-align: center;
+}
+
+/* ==========================
+   Lista
+========================== */
+
+.stack-items{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+}
+
+/* ==========================
+   Cada tecnología
+========================== */
+
+.stack-item{
+    width:220px;
+    padding:18px 22px;
+    border:1px solid #6c63ff;
+    border-radius:12px;
+    color:white;
+    background:#2b2f4a;
+    font-size:1.1rem;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.stack-item:hover{
+    transform:translateY(-5px);
+    background:#6c63ff;
+    box-shadow:0 0 20px rgba(108,99,255,.4);
+}
+
+/* ==========================
+   Flechas
+========================== */
+
+.stack-arrow{
+    font-size:3rem;
+    color:#6c63ff;
+    align-self:center;
+}

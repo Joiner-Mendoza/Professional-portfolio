@@ -1,0 +1,209 @@
+.project-card{
+
+    background:#112e42;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    border:1px solid rgba(0,171,240,.15);
+
+    display:flex;
+
+    flex-direction:column;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 45px rgba(0,0,0,.4);
+
+    border-color:var(--Azul-claro);
+
+}
+
+.project-image{
+
+    width:100%;
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.project-card:hover .project-image{
+
+    transform:scale(1.08);
+
+}
+
+.project-content{
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+.project-content h3{
+
+    color:white;
+
+    font-size:1.5rem;
+
+    margin-bottom:15px;
+
+}
+
+.project-content p{
+
+    color:#d5d5d5;
+
+    line-height:1.6;
+
+    margin-bottom:25px;
+
+    flex:1;
+
+}
+
+.project-tech{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+.project-tech span{
+
+    background:rgba(0,171,240,.12);
+
+    color:var(--Azul-claro);
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+
+    border:1px solid rgba(0,171,240,.2);
+
+}
+
+.project-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.project-buttons a{
+
+    flex:1;
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+}
+
+.project-buttons a:first-child{
+
+    background:transparent;
+
+    border:2px solid var(--Azul-claro);
+
+    color:var(--Azul-claro);
+
+}
+
+.project-buttons a:first-child:hover{
+
+    background:var(--Azul-claro);
+
+    color:var(--Black);
+
+}
+
+.project-buttons a:last-child{
+
+    background:var(--Azul-claro);
+
+    color:var(--Black);
+
+}
+
+.project-buttons a:last-child:hover{
+
+    background:#0094cf;
+
+}
+@media (max-width:900px){
+
+    .projects{
+
+        padding:80px 25px;
+
+    }
+
+    .projects h2{
+
+        font-size:2.5rem;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .projects{
+
+        padding:70px 15px;
+
+    }
+
+    .projects-grid{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+    }
+
+    .project-image{
+
+        height:190px;
+
+    }
+
+    .project-buttons{
+
+        flex-direction:column;
+
+    }
+
+}
