@@ -47,10 +47,9 @@ function About() {
         <h2>
           About <span>Me</span>
         </h2>
-
         <div className="aboutContent">
-          <h3>Full Stack Developer</h3>
 
+          <h3>Full Stack Developer</h3>
           <p>
           I'm a Full Stack Developer passionate about building modern and scalable web applications. I have experience developing responsive interfaces with React and Vue.js, building RESTful APIs with Django REST Framework and Spring Boot, and working with MySQL and SQLite. I enjoy creating clean, maintainable solutions while continuously learning and improving my skills.
           </p>

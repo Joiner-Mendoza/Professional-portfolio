@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "../../estilos/codewindow.css";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
-
+import cssFondo from "../../assets/Fondo.png";
+// codigo que se va a mostrar en la ventana de código
 const code = `class JoinerMendoza {
 
   constructor() {
@@ -22,9 +23,19 @@ const code = `class JoinerMendoza {
       "Java"
     ];
 
-    this.database = [
+    this.database = [   
       "MySQL",
       "SQLite"
+    ];
+
+    this.projects = [
+      "ESFIM Platform",
+      "System Turns Gestions",
+      "System Appoiments",
+      "Coffee Shop",
+      "Battata Bit",
+      "REST API For Countries",
+      "Inventory Management",
     ];
 
     this.available = true;
@@ -36,28 +47,28 @@ const code = `class JoinerMendoza {
 
 function CodeWindow() {
 
-    const [text, setText] = useState("");
+    const [text, setText] = useState(""); 
     useEffect(() => {
-        let index = 0;
+        let index = 0; // el índice actual del carácter que se va a mostrar
         let deleting = false;
-        const interval = setInterval(() => {
+        const interval = setInterval(() => { // ejecuta la función cada 25 milisegundos
             if (!deleting) {
                 setText(code.slice(0, index));
                 index++;
                 if (index > code.length) {
                     deleting = true;
-
+                    // espera 2 segundos antes de empezar a borrar
                     setTimeout(() => {},2000);
                 }
             }
             else{
-                index--;
-                setText(code.slice(0,index));
-                if(index===0){
-                    deleting=false;
+                index--; // decrementa el índice para borrar el texto
+                setText(code.slice(0,index)); // actualiza el estado con el texto recortado
+                if(index===0){ // si el índice llega a 0, deja de borrar y vuelve a escribir
+                    deleting=false; 
                 }
             }
-        },25);
+        },40);
         return ()=>clearInterval(interval);
     },[]);
     return(
@@ -68,8 +79,12 @@ function CodeWindow() {
                 <span className="green"></span>
                 <p>developer.js</p>
             </div>
-            <div className="editor-content">
-
+           <div className="editor-content">
+            <div className="editor-image">
+                <img src={cssFondo} alt="Joiner Mendoza" />
+            </div>
+            <div className="editor-code">
+                
                 <SyntaxHighlighter
                     language="javascript"
                     style={vscDarkPlus}
@@ -78,17 +93,22 @@ function CodeWindow() {
                     customStyle={{
                         margin: 0,
                         padding: "20px",
-                        background: "#1e1e1e",
+                        background: "transparent",
                         minHeight: "500px",
                         fontSize: "15px"
                     }}
                 >
+                    
                     {text}
                 </SyntaxHighlighter>
 
                 <span className="cursor">▌</span>
 
             </div>
+
+
+
+        </div>
 
         </div>
     )

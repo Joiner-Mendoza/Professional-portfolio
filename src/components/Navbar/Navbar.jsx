@@ -6,22 +6,22 @@ import '../../estilos/navbar.css';
 
 function Navbar() {
     
-//     const menuHamburguesa = document.querySelector('.Icon-menu ');
-//     const closeIconMenuAndroip = document.querySelector('.Icon-Close');
-//     const menuAndroip = document.querySelector('.Nav_Container_Menu-Androip');
-//  document.addEventListener('DOMContentLoaded', () => {
+    const menuHamburguesa = document.querySelector('.Icon-menu ');
+    const closeIconMenuAndroip = document.querySelector('.Icon-Close');
+    const menuAndroip = document.querySelector('.Nav_Container_Menu-Androip');
+ document.addEventListener('DOMContentLoaded', () => {
 
-//     menuHamburguesa.addEventListener('click',(event) => {
-//         event.preventDefault();
-//         menuAndroip.classList.add('active') 
-//     });
-//     closeIconMenuAndroip.addEventListener('clik', (event) => {
-//         event.preventDefault();
-//         menuAndroip.classList.toggle('inactive');
+    menuHamburguesa.addEventListener('click',(event) => {
+        event.preventDefault();
+        menuAndroip.classList.add('active') 
+    });
+    closeIconMenuAndroip.addEventListener('clik', (event) => {
+        event.preventDefault();
+        menuAndroip.classList.toggle('inactive');
 
-//     });
+    });
 
-//  })
+ })
   
 
 
@@ -48,10 +48,10 @@ function Navbar() {
                     ))}
                 </ul>
              {/* esto que esta comentado era el menu en androip pero me salia un eror al momento de darle al boton de menu   */}
-                        {/* <img src={iconMenu} alt="icon Menu"  className="Icon-menu inactive " onClick={menuHamburguesa}/>
+                        <img src={menuHamburguesa} alt="icon Menu"  className="Icon-menu inactive " onClick={menuHamburguesa}/>
                     <div className="Nav_Container_Menu-Androip inactive">
                             <div className="Menu-Androip">
-                              <img src={closeIconMenu} alt="Icon-Close" className="Icon-Close inactive" onClick={closeIconMenuAndroip}/>
+                              <img src={closeIconMenuAndroip} alt="Icon-Close" className="Icon-Close inactive" onClick={closeIconMenuAndroip}/>
                                      <ul className="Nav_Container_Menu-Androip-ul">
                                         {routes.map(route => (
                                           <li className="Nav_Container-Androip-ul-li" key={route.to}>
@@ -71,7 +71,7 @@ function Navbar() {
                             </div>
 
 
-                   </div> */}
+                   </div>
         </nav>
     );
 }

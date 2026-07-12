@@ -11,19 +11,17 @@ function ProjectCard({ project }) {
                 alt={project.title}
                 className="project-image"
             />
-
             <div className="project-content">
-
                 <h3>{project.title}</h3>
-
                 <p>{project.description}</p>
-
                 <div className="project-tech">
 
-                    {project.technologies.map((tech) => (
+                    {project.technologies.map((tech, index) => (
 
-                        <span key={tech}>
-                            {tech}
+                        <span key={index} className="tech-badge" title={tech.name}>
+                            {/* Si el proyecto incluye un icono, lo renderizamos aquí */}
+                            {tech.icon && <tech.icon className="tech-icon" style={{ marginRight: '5px', verticalAlign: 'middle' }} />}
+                            {tech.name}
                         </span>
 
                     ))}
@@ -31,7 +29,6 @@ function ProjectCard({ project }) {
                 </div>
 
                 <div className="project-buttons">
-
                     <a
                         href={project.github}
                         target="_blank"
@@ -39,9 +36,7 @@ function ProjectCard({ project }) {
                     >
                         GitHub
                     </a>
-
                     {project.demo && (
-
                         <a
                             href={project.demo}
                             target="_blank"
@@ -49,15 +44,10 @@ function ProjectCard({ project }) {
                         >
                             Live Demo
                         </a>
-
                     )}
-
                 </div>
-
             </div>
-
         </div>
-
     );
 
 }

@@ -1,215 +1,358 @@
-  :root {
-    --Azul:#081b29;
-    --azul2:#112e42;
-    --Azul-claro: #00abf0;
-    --Black:#000000;
-    --White:#ffffff;
-    --black-modal: rgb(9%,0%,0%,0.5) ;
-    --gray:#8080802b;
-    --gray2:#0a0a0a4d;
-    --Gray3:#9185854d;
-    --gray4:#918a8a;
-    --gray5:#3b3f50;
-    --foter:#081B49;
-  }
-  *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  html{
-    background-color: var(--Azul);
-  }
-  a{
-    padding: 8px 15px;
-    font-weight: bold;
-  }
-  /* estilos del nav */
-  .isActive {
-    display: none;
-  }
-
-
-/* Agrega los siguientes estilos para posicionar la imagen en el lado derecho */
-.logo {
-  position: absolute;
-  right: 15%; 
-  top: 50%; 
-  transform: translateY(-50%); /* Ajusta la alineación vertical */
-}
-.logo img{
-    height: 600px;
-    opacity: .3;
-    transition: 2s;
-    position: relative;
-
-}
-.logo img:hover{
-  opacity: 1;
-  cursor: pointer;
+:root {
+  --Azul: #081b29;
+  --azul2: #112e42;
+  --Azul-claro: #00abf0;
+  --Black: #000000;
+  --White: #ffffff;
+  --black-modal: rgb(9%, 0%, 0%, 0.5);
+  --gray: #8080802b;
+  --gray2: #0a0a0a4d;
+  --Gray3: #9185854d;
+  --gray4: #918a8a;
+  --gray5: #3b3f50;
+  --foter: #081b49;
 }
 
-  .nav_Container{
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    border-bottom: 1px solid var(--White);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+}
 
-  }
-  .ul_Nav_Container{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    padding-right: 300px;
-  }
-  .ul_Nav_Container a {
+html,
+body {
+  background: var(--Azul);
+  overflow-x: hidden;
+}
+
+a {
+  padding: 8px 15px;
+  font-weight: bold;
+}
+
+.isActive {
+  display: none;
+}
+
+/*======================
+        NAVBAR
+=======================*/
+
+.nav_Container {
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid var(--White);
+}
+
+.ul_Nav_Container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 300px;
+}
+
+.ul_Nav_Container a {
   margin: 0 40px;
-  }
+}
 
-  /* estilos del Hero */
-  .Hero-content{
-  padding: 15px;
-  max-width: 600px;
-  margin-top: -64px;
+/*======================
+        HERO
+=======================*/
+
+.hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 8%;
+}
+
+.Hero-content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  margin-left: 140px;
+  max-width: 650px;
+}
 
+.Hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--White);
+  line-height: 1.2;
+}
+
+.Hero-content h2 {
+  margin: 25px 0;
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--Azul-claro);
+}
+
+.Hero-content p {
+  color: var(--White);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/*======================
+        BOTONES
+=======================*/
+
+.btn-box {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.HireMe {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  padding: 13px;
+  border: 2px solid var(--Azul-claro);
+  border-radius: 8px;
+  background: var(--Azul-claro);
+  color: var(--Black);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: .4s;
+  z-index: 1;
+}
+
+.HireMe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: var(--Azul);
+  transition: .4s;
+  z-index: -1;
+}
+
+.HireMe:hover::before {
+  width: 100%;
+}
+
+.HireMe:hover {
+  color: var(--Azul-claro);
+}
+
+/*======================
+      REDES SOCIALES
+=======================*/
+
+.Hero-sci {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.iconHero {
+  color: var(--Azul-claro);
+  transition: .4s;
+}
+
+.iconHero:hover {
+  color: var(--White);
+  transform: translateY(-5px);
+}
+
+/*======================
+      CODE WINDOW
+=======================*/
+
+.logo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+  opacity: .35;
+  transition: .5s;
+}
+
+.logo img:hover {
+  opacity: 1;
+}
+
+/*======================
+        ABOUT
+=======================*/
+
+.about {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  padding: 80px 8%;
+}
+
+.about-me {
+  flex: 1;
+}
+
+.aboutContent {
+  max-width: 650px;
+}
+
+.aboutContent h3 {
+  color: var(--White);
+  margin: 20px 0;
+}
+
+.aboutContent p {
+  color: var(--White);
+  line-height: 1.8;
+}
+
+
+
+.description {
+  flex: 1;
+}
+
+/*======================
+      RESPONSIVE
+=======================*/
+
+@media (max-width: 1200px) {
+
+  .ul_Nav_Container {
+    padding-right: 120px;
   }
-  .Hero-content h1{
-    position: relative;
-    font-size: 53px;
-    font-weight: bold;
-    line-height: 1.2;
-    color: var(--White);
-    
+
+  .hero-wrapper {
+    gap: 40px;
   }
-  .Hero-content h2{
-    position: relative;
-    margin: 30px 0;
-    font-size: 35px;
-    color: transparent;
-    -webkit-text-stroke: 0.7px var(--Azul-claro);  /* esto es para la distincion del texto "Frontend Developer" */
-    
+
+}
+
+@media (max-width: 992px) {
+
+  .hero-wrapper {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 30px;
   }
-  .Hero-content p{
-    color: var(--White);
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1.4rem ;
-    margin-bottom: 30px;
-    /* width: 400px; */
-  }
-  /* estilos de los botones del Hero */
-  .Hero-content .btn-box{
-    position: relative;
-    display: flex;
-    justify-content: start;
+
+  .Hero-content {
     align-items: center;
-    gap: 15px;
-
   }
- 
 
-  .Hero-content .HireMe{
-    position: relative;
-    display: inline-flex;
+  .btn-box {
     justify-content: center;
-    text-decoration: none;
-    align-items: center;
-    width: 150px;
-    height: auto;
-    background: var(--Azul-claro);
-    border: 2px solid #00abf0;
-    border-radius: 8px;
-    font-size: 19px;
-    color: var(--Black);
-    font-weight: 600;
-    letter-spacing: 1px;
-    z-index: 1;
-    overflow: hidden;
-    transition: .5s;
-    padding: 13px;
-    margin: 30px 0;
+  }
 
-  }
-  
-  .Hero-content .HireMe{
-    background-color: transparent;
-    color: var(--Azul-claro);
-  }
-  
-  .Hero-content .HireMe:hover{
-    color: #00abf0;
-  
-  }
-  .Hero-content .HireMe{
-    background-color: var(--Azul-claro);
-    color: var(--Black);
-  }
-  .Hero-content .HireMe:hover{
-    color: var(--Azul-claro);
-    cursor: pointer;
-  }
-  .Hero-content .HireMe::before{
-    background-color: #00abf0;
-  }
-  .Hero-content .HireMe::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0 ;
-    width: 0;
-    height: 100%;
-    background: radial-gradient(rgba(10,27,41,1),rgba(10,27,41,1));
-    background: #081b29;
-    z-index: -1;
-    transition: .5s;
-  }
-  .Hero-content .HireMe:hover:before{
-    width: 100%;
-    transition: .5s;
-  
-  }
-  .Hero-content .HireMe:nth-child(2):hover{
-    color: var(--Azul-claro);
-  }
   .Hero-sci {
-    width: 50%;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 30px;
+  }
+
+  .aboutContent {
+    max-width: 100%;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .nav_Container {
     padding: 15px;
   }
-  .Hero-sci .iconHero{
-    width: 50px;
-    color: var(--Azul-claro);
-    transition: 1s;
-  }
-  .Hero-sci .iconHero:hover{
-    cursor: pointer;
-    color: var(--White);
 
+  .ul_Nav_Container {
+    justify-content: center;
+    padding-right: 0;
+    flex-wrap: wrap;
   }
 
-
-  /* MOBILE */
-
-  @media (max-width:1080px){
-    .Hero-content{
-      width: 100%;
-      margin-left: 1px ;
-      margin: 0 auto;
-      height: 100vh;
-    }
-    .Hero-content h1{
-      font-size: 36px;
-    }
-    .Hero-sci{
-      width: 100%;
-      padding:  0;
-    }
+  .ul_Nav_Container a {
+    margin: 10px;
   }
+
+  .Hero-content h1 {
+    font-size: 2.3rem;
+  }
+
+  .Hero-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .Hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn-box {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .HireMe {
+    width: 250px;
+  }
+
+  .Logo img {
+    width: 220px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .hero-wrapper,
+  .about {
+    padding: 60px 20px;
+  }
+
+  .Hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .Hero-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .Hero-content p {
+    font-size: .95rem;
+  }
+
+  .HireMe {
+    width: 100%;
+    max-width: 240px;
+  }
+
+}

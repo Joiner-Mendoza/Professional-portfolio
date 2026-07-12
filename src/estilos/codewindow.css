@@ -1,109 +1,167 @@
-.editor{
-
-    width:520px;
-    height: 450px;        
-    background:#1e1e1e;
-    border-radius:15px;
-    overflow:auto;
-    box-shadow:0 15px 40px rgba(0,0,0,.4);
-    
-
-}
-.editor-header{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    padding:15px;
-
-    background:#2d2d2d;
-
-}
-.red{
-
-    
-    width:12px;
-
-    height:12px;
-
-    border-radius:50%;
-
-    background:#ff5f56;
-
-}   
-.yellow{
-
-    width:12px;
-
-    height:12px;
-
-    border-radius:50%;
-
-    background:#ffbd2e;
-
-}
-.green{
-
-    width:12px;
-
-    height:12px;
-
-    border-radius:50%;
-
-    background:#27c93f;
-
-}
-.editor-header p{
-
-    color:white;
-
-    margin-left:15px;
-
-    font-size:15px;
-
-}
-.editor pre{
-    color:#d4d4d4;
-    padding:25px;
+.editor {
+    width: 700px;
     height: 500px;
-    font-size:15px;
-    line-height:28px;
-    white-space:pre-wrap;
-    font-family:Consolas, monospace;
+    background: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .4);
+    display: flex;
+    flex-direction: column;
+    margin-right: -100px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: #2d2d2d;
+}
+
+.red,
+.yellow,
+.green {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.editor-header p {
+    color: white;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.editor-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* ===========================
+   CODE
+=========================== */
+
+.editor-code {
+    flex: 1;
     overflow: auto;
-
-}
-.editor-content{
-
-    position:relative;
-
-}
-.cursor{
-
-    animation:blink .8s infinite;
-
-}
-@keyframes blink{
-
-0%{
-
-opacity:1;
-
+    position: relative;
 }
 
-50%{
+.editor-code pre {
+    margin: 0 !important;
+    min-height: 100%;
+    font-family: Consolas, monospace;
+}
 
-opacity:0;
+/* ===========================
+   IMAGE
+=========================== */
+
+.editor-image {
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #252526;
+    border-left: 1px solid rgba(255,255,255,.08);
+    padding: 20px;
+}
+
+.editor-image img {
+    width: 180px;
+    height: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.editor-image img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* ===========================
+   CURSOR
+=========================== */
+
+.cursor {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    animation: blink .8s infinite;
+}
+
+@keyframes blink {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 
 }
 
-100%{
+/* ===========================
+   RESPONSIVE
+=========================== */
 
-opacity:1;
+@media (max-width: 992px) {
+
+    .editor {
+        width: 100%;
+        max-width: 650px;
+        height: auto;
+        margin-right: 0;
+    }
+
+    .editor-content {
+        flex-direction: column;
+    }
+
+    .editor-image {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .editor-image img {
+        width: 160px;
+    }
 
 }
 
-}   
+@media (max-width: 576px) {
+
+    .editor-image img {
+        width: 130px;
+    }
+
+}

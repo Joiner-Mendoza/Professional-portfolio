@@ -20,7 +20,8 @@ function Hero() {
     
 
     return (
-        <div className="Hero-content">
+        <div className="hero-wrapper">
+             <div className="Hero-content">
             <h1>Hi, I'm Joiner Mendoza</h1>
             <h2>Full Stack Developer</h2>
             <p>
@@ -49,12 +50,13 @@ function Hero() {
               
             </div>
 
+        </div>
             <div className="logo">
                     <CodeWindow/>
-                
             </div>
             
         </div>
+    
 
     );
 }
