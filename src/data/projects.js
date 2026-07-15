@@ -90,7 +90,7 @@ const projects = [
       { name: "Gradle", icon: SiGradle, color: "#02303A" }
     ],
     github: "https://github.com/Joiner-Mendoza/Sistema-de-gestion-de-turnos",
-    demo: "https://plataforma-educativa-umber.vercel.app/#/dashboard"
+    demo: "https://sistema-de-gestion-de-turnos.vercel.app"
   },
   
 
