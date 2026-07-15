@@ -1,37 +1,244 @@
-.projects{
+/* ===========================
+   SECTION PROJECTS
+=========================== */
+
+.projects {
     width: 100%;
     min-height: 100vh;
     padding: 90px 8%;
     background: var(--Azul);
 }
 
-.projects h2{
+.projects h2 {
     text-align: center;
     font-size: 3rem;
     color: var(--White);
 }
 
-.projects h2 span{
+.projects h2 span {
     color: var(--Azul-claro);
 }
 
-.projects-description{
+.projects-description {
     max-width: 850px;
-    margin: 20px auto 60px;
+    margin: 20px auto 70px;
     text-align: center;
     color: #c9d1d9;
     font-size: 1.1rem;
     line-height: 1.8;
 }
 
-.projects-grid{
 
-    display: grid;
+/* ===========================
+   CONTAINER 3D
+=========================== */
 
-    grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+.projects-grid {
 
-    gap: 35px;
+    position: relative;
 
-    align-items: stretch;
+    width: 100%;
+
+    height: 700px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    perspective: 1800px;
+
+    overflow: hidden;
+
+}
+
+
+/* ===========================
+   PROJECT CARD
+=========================== */
+
+.project-card {
+
+    position: absolute;
+
+    width: 430px;
+
+    transition:
+        transform .65s cubic-bezier(.175, .885, .32, 1.275),
+        opacity .65s ease,
+        filter .65s ease,
+        box-shadow .65s ease;
+
+    transform-style: preserve-3d;
+
+    cursor: pointer;
+
+}
+
+
+/* ===========================
+   CARD CENTER
+=========================== */
+
+.project-card.center {
+
+    transform:
+        translateX(0) translateZ(100px) scale(1);
+
+    opacity: 1;
+
+    z-index: 30;
+
+    filter: blur(0);
+
+    box-shadow:
+        0 35px 70px rgba(0, 0, 0, .45);
+
+}
+
+
+/* ===========================
+   CARD LEFT
+=========================== */
+
+.project-card.left {
+
+    transform:
+        translateX(-360px) rotateY(35deg) scale(.82);
+
+    opacity: .55;
+
+    z-index: 20;
+
+    filter: blur(1px);
+
+}
+
+
+/* ===========================
+   CARD RIGHT
+=========================== */
+
+.project-card.right {
+
+    transform:
+        translateX(360px) rotateY(-35deg) scale(.82);
+
+    opacity: .55;
+
+    z-index: 20;
+
+    filter: blur(1px);
+
+}
+
+
+/* ===========================
+   HIDDEN CARDS
+=========================== */
+
+.project-card.hidden {
+
+    opacity: 0;
+
+    transform: scale(.45);
+
+    pointer-events: none;
+
+}
+
+
+/* ===========================
+   HOVER
+=========================== */
+
+.project-card.left:hover {
+
+    transform:
+        translateX(-340px) rotateY(28deg) scale(.88);
+
+}
+
+.project-card.right:hover {
+
+    transform:
+        translateX(340px) rotateY(-28deg) scale(.88);
+
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+
+    .projects-grid {
+
+        height: 650px;
+
+    }
+
+    .project-card {
+
+        width: 340px;
+
+    }
+
+    .project-card.left {
+
+        transform:
+            translateX(-190px) rotateY(22deg) scale(.82);
+
+    }
+
+    .project-card.right {
+
+        transform:
+            translateX(190px) rotateY(-22deg) scale(.82);
+
+    }
+
+}
+
+
+@media (max-width:768px) {
+
+    .projects {
+
+        padding: 80px 5%;
+
+    }
+
+    .projects-grid {
+
+        height: 600px;
+
+    }
+
+    .project-card {
+
+        width: 300px;
+
+    }
+
+    .project-card.left {
+
+        transform:
+            translateX(-130px) scale(.75);
+
+        opacity: .25;
+
+    }
+
+    .project-card.right {
+
+        transform:
+            translateX(130px) scale(.75);
+
+        opacity: .25;
+
+    }
 
 }

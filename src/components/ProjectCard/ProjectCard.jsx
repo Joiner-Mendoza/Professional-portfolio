@@ -1,11 +1,13 @@
 import "../../estilos/projectcard.css";
 
-function ProjectCard({ project }) {
+function ProjectCard({ project,position,onClick }) {
 
     return (
 
-        <div className="project-card">
-
+        <div
+            className={`project-card ${position}`}
+            onClick={onClick}
+        >
             <img
                 src={project.image}
                 alt={project.title}

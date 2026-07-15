@@ -10,7 +10,8 @@ import {
   FaGitAlt,
   FaGithub,
   FaJava,
-  FaDatabase
+  FaDatabase,
+  
 } from "react-icons/fa";
 
 import {
@@ -33,6 +34,7 @@ function Skills() {
       items: [
         { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
         { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
+        { name: "Java", icon: FaJava, color: "#ED8B00" },
         { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
         { name: "React", icon: FaReact, color: "#61DAFB" },
         { name: "Vue.js", icon: FaVuejs, color: "#42B883" },

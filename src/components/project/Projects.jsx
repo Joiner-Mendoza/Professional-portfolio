@@ -1,10 +1,17 @@
 import "../../estilos/projects.css";
-
+import { useState } from "react";
 import projects from "../../data/projects.js";
 
 import {ProjectCard} from "../ProjectCard/ProjectCard.jsx";
 
 function Projects() {
+    // manejo de estados para la anomacion de las cards
+    const [active, setActive] = useState(0);
+
+    const total = projects.length;
+    const left = (active - 1 + total) % total; // índice de la card a la izquierda
+    const right  = (active + 1 ) % total; // indice de la card a la derecha
+
 
     return (
 
@@ -23,18 +30,25 @@ function Projects() {
             </p>
 
             <div className="projects-grid">
+                {projects.map((project,index) => {
+                    let position = "hidden"; // posición por defecto
 
-                {projects.map((project) => (
-
-                    <ProjectCard
-
-                        key={project.id}
-
-                        project={project}
-
-                    />
-
-                ))}
+                    if (index === active) {
+                        position = "center"; // si es la card activa
+                    }else if (index === left){
+                        position = "left"; // si es la card a la izquierda
+                    }else if (index === right){
+                        position = "right"; // si es la card a la derecha
+                    }
+                    return (
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                            position={position}
+                            onClick={() => setActive(index)} // al hacer click, se activa la card correspondiente
+                        />
+                    );
+                })}
 
             </div>
 
