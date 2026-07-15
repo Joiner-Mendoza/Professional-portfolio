@@ -1,7 +1,7 @@
 // Imágenes de los proyectos
 import Gestionmateriales from "../assets/projects/Gestionmateriales.png";
 import Batata from "../assets/projects/Batata.png";
-import Systematurnos from "../assets/projects/Sistematurnos.png";
+import Systematurnos from "../assets/projects/SistemaTurnos.png";
 import {
   FaHtml5,
   FaCss3Alt,
