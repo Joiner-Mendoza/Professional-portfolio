@@ -1,40 +1,35 @@
 import "./App.css";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import { Navbar } from "./components/Navbar/Navbar";
 import { Hero } from "./components/Hero/Hero";
 import { About } from "./components/About/About";
 import { Skills } from "./components/Skills/Skills";
 import { Contact } from "./components/Contact/Contact";
-import {Projects} from "./components/project/Projects";
-
-function HomePage() {
-  return (
-    <>
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-    </>
-  );
-}
+import { Projects } from "./components/project/Projects";
 
 function App() {
   return (
     <HashRouter>
       <Navbar />
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
+      <Hero />
 
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
+      <section id="about">
+        <About />
+      </section>
 
-        <Route path="*" element={<p>Not Found</p>} />
-      </Routes>
+      <section id="skills">
+        <Skills />
+      </section>
+
+      <section id="projects">
+        <Projects />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
     </HashRouter>
   );
 }
