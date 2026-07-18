@@ -1,4 +1,5 @@
 import "../../estilos/skills.css";
+import translations from "../../data/translations";
 
 import {
   FaHtml5,
@@ -27,10 +28,12 @@ import {
 
 } from "react-icons/si";
 
-function Skills() {
+
+function Skills({ language }) {
+  const t = translations[language];
   const stack = [
     {
-      title: "Frontend",
+      title: t.skills.frontend,
       items: [
         { name: "HTML5", icon: FaHtml5, color: "#E34F26" },
         { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
@@ -45,7 +48,7 @@ function Skills() {
     },
 
     {
-      title: "Backend",
+      title: t.skills.backend,
       items: [
         { name: "Django", icon: SiDjango, color: "#092E20" },
         { name: "Django REST", icon: SiDjango, color: "#092E20" },
@@ -55,7 +58,7 @@ function Skills() {
     },
 
     {
-      title: "Base de Datos",
+      title: t.skills.database,
       items: [
         { name: "MySQL", icon: SiMysql, color: "#4479A1" },
         { name: "SQLite", icon: SiSqlite, color: "#003B57" }
@@ -63,7 +66,7 @@ function Skills() {
     },
 
     {
-      title: "Herramientas",
+      title: t.skills.tools,
       items: [
         { name: "Git", icon: FaGitAlt, color: "#F05032" },
         { name: "GitHub", icon: FaGithub, color: "#FFFFFF" },
@@ -78,9 +81,9 @@ function Skills() {
   return (
     <section className="skills" id="skills">
       <h2 className="title-skills">
-        My <span>Skills</span>
+        {t.skills.title} <span>{t.skills.skill}</span>
       </h2>
-    <p>Here are the technologies, frameworks, and development tools I use to create responsive user interfaces, robust backend services, and complete full-stack web applications.</p>
+    <p>{t.skills.description}</p>
       <div className="stack-visual">
         {/** primer map  */}
         {stack.map((section) => (

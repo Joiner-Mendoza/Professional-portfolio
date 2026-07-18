@@ -1,6 +1,6 @@
 import "../../estilos/projectcard.css";
 
-function ProjectCard({ project,position,onClick }) {
+function ProjectCard({ project,position,onClick,language }) {
 
     return (
 
@@ -14,8 +14,8 @@ function ProjectCard({ project,position,onClick }) {
                 className="project-image"
             />
             <div className="project-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
+                <h3>{project.title[language]}</h3>
+                <p>{project.description[language]}</p>
                 <div className="project-tech">
 
                     {project.technologies.map((tech, index) => (

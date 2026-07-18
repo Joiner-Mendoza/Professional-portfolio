@@ -2,6 +2,8 @@ import React from "react";
 import "../../App.css";
 import "../../estilos/hero.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import translations from "../../data/translations";
 import {
   faFacebook,
   faGithub,
@@ -9,7 +11,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import CodeWindow from "../window/CodeWindow.jsx";
 
-function Hero() {
+function Hero({language}) {
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -21,17 +23,18 @@ function Hero() {
       });
     }
   };
+  
+  const t = translations[language];
 
   return (
     <section id="home" className="hero-wrapper">
       <div className="Hero-content">
-        <h1>Hi, I'm Joiner Mendoza</h1>
+        <h1>{t.hero.greeting}</h1>
 
-        <h2>Full Stack Developer</h2>
+        <h2>{t.hero.role}</h2>
 
         <p>
-          I build modern, scalable web applications using React, Django, Java
-          and Spring Boot.
+          {t.hero.description}
         </p>
 
         <div className="btn-box">
@@ -39,14 +42,14 @@ function Hero() {
             onClick={() => scrollToSection("about")}
             className="HireMe"
           >
-            Hire Me
+            {t.hero.hire}
           </button>
 
           <button
             onClick={() => scrollToSection("contact")}
             className="HireMe"
           >
-            Let's Talk
+            {t.hero.talk}
           </button>
         </div>
 

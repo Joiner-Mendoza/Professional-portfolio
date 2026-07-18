@@ -1,6 +1,7 @@
 import "./App.css";
-import { HashRouter } from "react-router-dom";
+import { useState } from "react";
 
+import { HashRouter } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Hero } from "./components/Hero/Hero";
 import { About } from "./components/About/About";
@@ -9,29 +10,69 @@ import { Contact } from "./components/Contact/Contact";
 import { Projects } from "./components/project/Projects";
 
 function App() {
-  return (
-    <HashRouter>
-      <Navbar />
 
-      <Hero />
+    const [language, setLanguage] = useState(
+        localStorage.getItem("language") || "en"
+    );
 
-      <section id="about">
-        <About />
-      </section>
 
-      <section id="skills">
-        <Skills />
-      </section>
+    const changeLanguage = () => {
 
-      <section id="projects">
-        <Projects />
-      </section>
+        const newLanguage = language === "en" ? "es" : "en";
 
-      <section id="contact">
-        <Contact />
-      </section>
-    </HashRouter>
-  );
+        setLanguage(newLanguage);
+
+        localStorage.setItem(
+            "language",
+            newLanguage
+        );
+
+    };
+
+
+    return (
+        <>
+
+            <button
+                className="language-btn"
+                onClick={changeLanguage}
+            >
+                🌐 {language === "en" ? "ES" : "EN"}
+            </button>
+
+
+            <HashRouter>
+
+                <Navbar language={language}/>
+
+                <Hero language={language}/>
+
+
+                <section id="about">
+                    <About language={language}/>
+                </section>
+
+
+                <section id="skills">
+                    <Skills language={language}/>
+                </section>
+
+
+                <section id="projects">
+                    <Projects language={language}/>
+                </section>
+
+
+                <section id="contact">
+                    <Contact language={language}/>
+                </section>
+
+
+            </HashRouter>
+
+        </>
+    );
 }
+
 
 export default App;

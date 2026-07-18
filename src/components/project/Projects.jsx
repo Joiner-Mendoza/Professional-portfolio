@@ -3,15 +3,15 @@ import { useState } from "react";
 import projects from "../../data/projects.js";
 
 import {ProjectCard} from "../ProjectCard/ProjectCard.jsx";
-
-function Projects() {
+import translations from "../../data/translations.js";
+function Projects({language}) {
     // manejo de estados para la anomacion de las cards
     const [active, setActive] = useState(0);
-
     const total = projects.length;
     const left = (active - 1 + total) % total; // índice de la card a la izquierda
     const right  = (active + 1 ) % total; // indice de la card a la derecha
-
+    
+    const t = translations[language];
 
     return (
 
@@ -19,13 +19,13 @@ function Projects() {
 
             <h2>
 
-                My <span>Projects</span>
+                {t.projects.title} <span>Projects</span>
 
             </h2>
 
             <p className="projects-description">
 
-                Here are some of the projects I've developed using modern web technologies. Each one has helped me strengthen my skills in frontend, backend and full stack development.
+                {t.projects.description}
 
             </p>
 
@@ -45,6 +45,7 @@ function Projects() {
                             key={project.id}
                             project={project}
                             position={position}
+                            language={language}
                             onClick={() => setActive(index)} // al hacer click, se activa la card correspondiente
                         />
                     );

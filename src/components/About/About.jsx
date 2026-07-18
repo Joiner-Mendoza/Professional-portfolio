@@ -1,6 +1,6 @@
 import React from "react";
 import "../../estilos/about.css";
-
+import translations from "../../data/translations";
 import {
   FaUserTie,
   FaLaptopCode,
@@ -40,18 +40,19 @@ const profileInfo = [
 
 
 
-function About() {
+function About({ language }) {
+  const t = translations[language];// estado para el 
   return (
     <section className="about">
       <div className="about-me">
         <h2>
-          About <span>Me</span>
+          {t.about.title} <span>{t.about.me}</span>
         </h2>
         <div className="aboutContent">
 
-          <h3>Full Stack Developer</h3>
+          <h3>{t.about.subtitle}</h3>
           <p>
-          I'm a Full Stack Developer passionate about building modern and scalable web applications. I have experience developing responsive interfaces with React and Vue.js, building RESTful APIs with Django REST Framework and Spring Boot, and working with MySQL and SQLite. I enjoy creating clean, maintainable solutions while continuously learning and improving my skills.
+              {t.about.description}
           </p>
         <a
           href="/cv/HV-jOINER.pdf"
